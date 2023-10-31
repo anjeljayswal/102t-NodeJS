@@ -3,18 +3,24 @@ const app=express();  //invoke express
 // ALTERNATIVE 
 // const app = require("express");
 
+app.set("view engine","ejs");
+
 app.get("/",(req,res)=>{
     // console.log(req);
     // res.send("Hi, Anjali");
-    res.send("<h2>Hi, LOL</h2>");
+    const name ="Anjali Jayswal";
+    // const profession="hII"
+    
+    res.render("home.ejs",{name:name ,profession:"hii"});
+
 })
 
 app.get("/about",(req,res)=>{
-    res("About Page");
+    res.render("about");
 })
 
 app.get("/conatct",(Req,res)=>{
-    res("Contact Page");
+    res.res("Contact Page");
 })
 
 
